@@ -3,7 +3,7 @@ const express = require("express");
 const { sequelize } = require("./models");
 const dotenv = require("dotenv");
 const CORS = require("cors");
-const bodyParser = require('body-parser')
+const { urlencoded, json } = require("body-parser");
 
 dotenv.config();
 
@@ -14,12 +14,12 @@ const port = process.env.PORT || 9001;
 // middleware
 app.use(express.json());
 app.use(CORS());
-app.use(bodyParser.json())
+app.use(json());
 
 // db config
 
 // API routes
-require('./routes')(app)
+require("./routes")(app);
 
 // listening
 app.listen(port, async () => {
@@ -28,5 +28,4 @@ app.listen(port, async () => {
   console.log("Database connected!!!");
 });
 
-
-module.exports = app
+module.exports = app;
