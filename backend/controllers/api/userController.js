@@ -8,6 +8,7 @@ const userController = {
       userName,
       email,
       password,
+      profile_pic,
       passwordCheck,
       department,
       address,

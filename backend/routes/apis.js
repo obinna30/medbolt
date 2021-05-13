@@ -4,10 +4,11 @@ const newsUpdateController = require("../controllers/api/newsUpdateController");
 const oneNewsController = require("../controllers/api/oneNewsController");
 const userController = require("../controllers/api/userController");
 const router = express.Router();
+const { multerUploads, dataUri } = require('../multer');
 
 // ----users api - - - - -//
 // create a new user profile
-router.post('/signup', userController.signUp)
+router.post('/signup', multerUploads, userController.signUp)
 // user signIn
 router.post('/signin', userController.signIn)
 // update user details
