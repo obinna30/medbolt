@@ -29,6 +29,7 @@ const userController = {
         userName,
         email,
         password,
+        profile_pic,
         department,
         address,
         phoneNumber,
